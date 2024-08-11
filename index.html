@@ -30,28 +30,13 @@
                         <i class="bi bi-arrow-right-circle-fill"></i>
                     </div>
                     <!-- Conteúdo -->
-                    <div class="card-container d-flex">
-                        <div class="card-painel">
-                            <div class="card-face card-front d-flex flex-column justify-content-start">
-                                <div class="foto-pessoa rounded-4" id="fotoPessoa">
-                                    <!-- A imagem será aplicada como fundo -->
-                                </div>
-                                <div class="d-flex flex-column mt-2">
-                                    <span class="info-card" id="nomePessoa">Nome da Pessoa</span>
-                                    <span class="info-card" id="idadePessoa">Idade</span>
-                                    <button type="button" class="btn btn-success info-card my-3" data-bs-toggle="modal"
-                                        data-bs-target="#modalForm" data-bs-whatever="@mdo">Responda o
-                                        formulário</button>
-                                </div>
-                            </div>
-                            <div class="card-face card-back">
-                                <input type="text" id="titulo" class="form-control form-control-md" placeholder="Titulo"
-                                    aria-label="Disabled input example" disabled>
-                                <textarea class="form-control descricao-form" id="descricao"
-                                    placeholder="Descrição" disabled></textarea>
-                            </div>
+                    <div class="painel-container position-relative">
+                        <div class="card-container d-flex">
+                            <!-- Os cards serão adicionados aqui -->
                         </div>
+                        <div id="no-cards-message" class="mensagem">Clique no botão para adicionar um card</div>
                     </div>
+
                     <!-- Modal -->
                     <div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
@@ -63,7 +48,7 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form class="d-flex flex-column gap-3" id="form-modal">
+                                    <form id="form-modal" class="d-flex flex-column gap-3">
                                         <div class="form-floating">
                                             <input type="text" class="form-control" id="form-nome" placeholder="Nome"
                                                 required>
@@ -96,7 +81,7 @@
                                         <div class="modal-footer">
                                             <button type="reset" class="btn btn-secondary"
                                                 data-bs-dismiss="modal">Fechar</button>
-                                            <button type="submit" class="btn btn-primary">Enviar</button>
+                                            <button type="submit" id="btn-submit" class="btn btn-primary">Enviar</button>
                                         </div>
                                     </form>
                                 </div>
