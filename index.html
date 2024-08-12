@@ -50,37 +50,30 @@
                                 <div class="modal-body">
                                     <form id="form-modal" class="d-flex flex-column gap-3">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="form-nome" placeholder="Nome"
-                                                required>
+                                            <input type="text" class="form-control" id="form-nome" name="nome" placeholder="Nome" required>
                                             <label for="form-nome">Nome</label>
                                         </div>
                                         <div class="form-floating">
-                                            <input type="number" min="18" class="form-control" id="form-idade"
-                                                placeholder="Idade" required>
+                                            <input type="number" min="18" class="form-control" id="form-idade" name="idade" placeholder="Idade" required>
                                             <label for="form-idade">Idade</label>
                                         </div>
                                         <div class="input-group">
-                                            <input type="file" class="d-none" id="fileInput">
+                                            <input type="file" class="d-none" id="fileInput" name="foto">
                                             <button type="button" class="btn btn-outline-secondary rounded-start"
                                                 id="button-addon1">Escolher Arquivo</button>
-                                            <input type="text" id="form-file" class="form-control"
-                                                placeholder="Coloque aqui a sua foto"
-                                                aria-label="Example text with button addon"
-                                                aria-describedby="button-addon1" disabled>
+                                            <input type="text" id="form-file" class="form-control" placeholder="Coloque aqui a sua foto"
+                                                aria-label="Example text with button addon" aria-describedby="button-addon1" disabled>
                                         </div>
                                         <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a comment here"
-                                                id="form-titulo" required></textarea>
+                                            <textarea class="form-control" placeholder="Título" id="form-titulo" name="titulo" required></textarea>
                                             <label for="form-titulo">Título</label>
                                         </div>
                                         <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a comment here"
-                                                id="form-descricao" style="height: 150px" required></textarea>
+                                            <textarea class="form-control" placeholder="Escreva aqui sua crítica construtiva" id="form-descricao" name="descricao" style="height: 150px" required></textarea>
                                             <label for="form-descricao">Escreva aqui sua crítica construtiva</label>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="reset" class="btn btn-secondary"
-                                                data-bs-dismiss="modal">Fechar</button>
+                                            <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                                             <button type="submit" id="btn-submit" class="btn btn-primary">Enviar</button>
                                         </div>
                                     </form>
