@@ -1,11 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
+    setupNavigation();
     setupFileInput();
     setupFormSubmission();
     setupCardCreation();  
     checkInitialCardState(); 
     setupCardFlip(); 
-    setupNavigation(); 
 });
+
+let currentIndex = 0; 
 
 function setupFileInput() {
     const fileInput = document.getElementById('fileInput');
@@ -37,6 +39,64 @@ function setupFormSubmission() {
     });
 }
 
+function setupNavigation() {
+    const leftArrow = document.querySelector('.left-arrow');
+    const rightArrow = document.querySelector('.right-arrow');
+
+    updateCardVisibility();
+
+    leftArrow.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--; 
+            updateCardVisibility();
+        }
+    });
+
+    rightArrow.addEventListener('click', () => {
+        const cards = document.querySelectorAll('.card-painel');
+        if (currentIndex < cards.length - 1) {
+            currentIndex++; 
+            updateCardVisibility();
+        }
+    });
+}
+
+function updateCardVisibility() {
+    const cards = document.querySelectorAll('.card-painel');
+    cards.forEach((card, index) => {
+        card.style.display = (index === currentIndex) ? 'block' : 'none';
+    });
+}
+
+function createNewCard() {
+    const cardHTML = `
+        <div class="card-painel">
+            <div class="card-face card-front d-flex flex-column justify-content-start">
+                <div class="foto-pessoa rounded-4"></div>
+                <div class="d-flex flex-column mt-2">
+                    <span class="info-card nomePessoa" id="nomePessoa">Nome da Pessoa</span> <!-- IDs exclusivos -->
+                    <span class="info-card idadePessoa" id="idadePessoa">Idade</span> <!-- IDs exclusivos -->
+                    <button type="button" class="btn btn-success info-card my-3" data-bs-toggle="modal"
+                        data-bs-target="#modalForm">Responda o formulário</button>
+                </div>
+            </div>
+            <div class="card-face card-back">
+                <input type="text" class="form-control form-control-md titulo-form" id="tituloForm" placeholder="Título"
+                    aria-label="Disabled input example" disabled> <!-- ID exclusivo -->
+                <textarea class="form-control descricao-form" id="descricaoForm" placeholder="Descrição" disabled></textarea> <!-- ID exclusivo -->
+            </div>
+        </div>
+    `;
+
+    const cardContainer = document.querySelector('.card-container');
+    
+    cardContainer.insertAdjacentHTML('beforeend', cardHTML);
+    
+    currentIndex = document.querySelectorAll('.card-painel').length - 1;
+    
+    updateCardVisibility();
+}
+
 function updateCardContent() {
     const nome = document.getElementById('form-nome').value;
     const idade = document.getElementById('form-idade').value;
@@ -52,23 +112,17 @@ function updateCardContent() {
     const foto = URL.createObjectURL(fileInput.files[0]);
 
     const lastCard = document.querySelector('.card-container .card-painel:last-child');
-    lastCard.querySelector('#nomePessoa').textContent = nome;
-    lastCard.querySelector('#idadePessoa').textContent = `${idade} anos`;
-
-    lastCard.querySelector('#titulo-form').value = titulo;
-    lastCard.querySelector('#descricao-form').value = descricao;
-
-    lastCard.querySelector('.btn-success').textContent = "Responda o formulário";
+    lastCard.querySelector(`#nomePessoa`).textContent = nome;
+    lastCard.querySelector(`#idadePessoa`).textContent = `${idade} anos`;
+    lastCard.querySelector(`#tituloForm`).value = titulo;
+    lastCard.querySelector(`#descricaoForm`).value = descricao;
 
     const fotoPessoa = lastCard.querySelector('.foto-pessoa');
     fotoPessoa.style.backgroundImage = `url(${foto})`;
     fotoPessoa.style.backgroundSize = 'cover';
     fotoPessoa.style.backgroundPosition = 'center';
     fotoPessoa.style.backgroundRepeat = 'no-repeat';
-
-    lastCard.style.display = 'block'; 
 }
-
 
 function closeModal() {
     const modalElement = document.getElementById('modalForm');
@@ -89,80 +143,6 @@ function setupCardCreation() {
         updateCardVisibility();
     });
 }
-let currentIndex = 0;
-function createNewCard() {
-    const cardHTML = `
-        <div class="card-painel">
-            <div class="card-face card-front d-flex flex-column justify-content-start">
-                <div class="foto-pessoa rounded-4"></div>
-                <div class="d-flex flex-column mt-2">
-                    <span class="info-card" id="nomePessoa">Nome da Pessoa</span>
-                    <span class="info-card" id="idadePessoa">Idade</span>
-                    <button type="button" class="btn btn-success info-card my-3" data-bs-toggle="modal"
-                        data-bs-target="#modalForm">Responda o formulário</button>
-                </div>
-            </div>
-            <div class="card-face card-back">
-                <input type="text" id="titulo-form" class="form-control form-control-md" placeholder="Título"
-                    aria-label="Disabled input example" disabled>
-                <textarea id="descricao-form" class="form-control descricao-form" placeholder="Descrição" disabled></textarea>
-            </div>
-        </div>
-    `;
-
-    const cardContainer = document.querySelector('.card-container');
-    
-    cardContainer.innerHTML += cardHTML;
-    
-    const cards = document.querySelectorAll('.card-painel');
-    currentIndex = cards.length - 1;
-    
-    updateCardVisibility();
-    
-    function updateCardVisibility() {
-        cards.forEach((card, index) => {
-            card.style.display = (index === currentIndex) ? 'block' : 'none';
-        });
-    }
-}
-
-function setupNavigation() {
-    const leftArrow = document.querySelector('.left-arrow');
-    const rightArrow = document.querySelector('.right-arrow');
-
-    leftArrow.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--; 
-            updateCardVisibility();
-        }
-    });
-
-    rightArrow.addEventListener('click', () => {
-        const cards = document.querySelectorAll('.card-painel');
-        if (currentIndex < cards.length - 1) {
-            currentIndex++; 
-            updateCardVisibility();
-        }
-    });
-
-    updateCardVisibility();
-
-    function updateCardVisibility() {
-        const cards = document.querySelectorAll('.card-painel');
-        cards.forEach((card, index) => {
-            card.style.display = (index === currentIndex) ? 'block' : 'none';
-        });
-    }
-}
-
-function updateCardVisibility() {
-    const cards = document.querySelectorAll('.card-painel');
-    cards.forEach((card, index) => {
-        card.style.display = (index === currentIndex) ? 'block' : 'none';
-    });
-}
-
-
 
 function hideMessage() {
     const messageElement = document.getElementById('no-cards-message');
