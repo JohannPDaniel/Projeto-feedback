@@ -27,8 +27,8 @@ const fragmentShader = `
 `;
 
 const uniforms = {
-    color1: { type: 'vec3', value: new THREE.Color(0x0000d0) },
-    color2: { type: 'vec3', value: new THREE.Color(0x00f0ff) }
+    color1: { type: 'vec3', value: new THREE.Color(0x83dff1) },
+    color2: { type: 'vec3', value: new THREE.Color(0xec85da3) }
 };
 
 const material = new THREE.ShaderMaterial({
@@ -48,7 +48,7 @@ iconCanvas.height = 256;
 const iconContext = iconCanvas.getContext('2d');
 
 iconContext.font = '200px "Arial"';  
-iconContext.fillStyle = '#0f3';
+iconContext.fillStyle = '#000000';
 iconContext.textAlign = 'center';
 iconContext.textBaseline = 'middle';
 iconContext.fillText('+', 188, 188);

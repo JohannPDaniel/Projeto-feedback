@@ -74,9 +74,9 @@ function createNewCard() {
             <div class="card-face card-front d-flex flex-column justify-content-start">
                 <div class="foto-pessoa rounded-4"></div>
                 <div class="d-flex flex-column mt-2">
-                    <span class="info-card nomePessoa" id="nomePessoa">Nome da Pessoa</span> <!-- IDs exclusivos -->
-                    <span class="info-card idadePessoa" id="idadePessoa">Idade</span> <!-- IDs exclusivos -->
-                    <button type="button" class="btn btn-success info-card my-3" data-bs-toggle="modal"
+                    <span class="info-card nomePessoa" id="nomePessoa">Nome da Pessoa</span> 
+                    <span class="info-card idadePessoa" id="idadePessoa">Idade</span> 
+                    <button type="button" class="btn btn-dark info-card my-2" data-bs-toggle="modal"
                         data-bs-target="#modalForm">Responda o formulário</button>
                 </div>
             </div>
