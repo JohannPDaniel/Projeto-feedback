@@ -249,7 +249,7 @@
     height: 290px;
     max-width: 200px;
     min-width: 200px;
-    min-height: 310px;
+    min-height: 340px;
   }
 
   .card-face {
@@ -258,7 +258,7 @@
     right: 8px;
     bottom: 8px;
     max-width: 185px;
-    max-height: 295px;
+    min-height: 325px;
   }
 
   .arrow {
@@ -269,7 +269,7 @@
     width: 100%;
     height: 100%;
     max-width: 160px;
-    min-height: 135px;
+    min-height: 165px;
     background-color: white;
   }
 
@@ -289,13 +289,14 @@
 @media screen and (min-width: 768px) and (max-width: 992px) {
   .painel {
     min-width: 600px;
+    min-height: 450px;
   }
 
   .card-painel {
     height: 300px;
     max-width: 300px;
     min-width: 200px;
-    min-height: 350px;
+    min-height: 380px;
   }
 
   .card-face {
@@ -304,14 +305,14 @@
     right: 8px;
     bottom: 8px;
     max-width: 283px;
-    max-height: 335px;
+    max-height: 365px;
   }
 
   .foto-pessoa {
     width: 100%;
     height: 100%;
     max-width: 230px;
-    min-height: 190px;
+    min-height: 225px;
   }
 
   .info-card {
@@ -335,13 +336,14 @@
 @media screen and (min-width: 992px) and (max-width: 1439px) {
   .painel {
     min-width: 900px;
+    min-height: 450px;
   }
 
   .card-painel {
     height: 300px;
     max-width: 315px;
     min-width: 290px;
-    min-height: 330px;
+    min-height: 358px;
   }
 
   .card-face {
@@ -352,14 +354,14 @@
     width: 100%;
     height: 100%;
     max-width: 300px;
-    max-height: 315px;
+    max-height: 343px;
   }
 
   .foto-pessoa {
     width: 100%;
     height: 100%;
     max-width: 200px;
-    min-height: 170px;
+    min-height: 200px;
     background-color: white;
   }
 
@@ -377,13 +379,14 @@
 
   .descricao-form {
     margin-top: 10px;
-    height: 245px;
+    height: 260px;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .painel {
     min-width: 1000px;
+    min-height: 450px;
   }
 
   .card-painel {
