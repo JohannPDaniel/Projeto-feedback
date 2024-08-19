@@ -1,56 +1,90 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-header{
+header {
     width: 100%;
+    min-width: calc(100vw - 50px);
     height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: linear-gradient(
         270deg,
         rgb(152, 207, 207),
         rgb(120, 101, 189),
         rgb(174, 115, 189),
         rgb(172, 88, 127)
-      );
+    );
 }
 
-main{
-    width: 100%;
-    height: 100vh;
+main {
+    width: 100vw;
+    min-height: calc(100vh - 0px);
     background-color: rgb(214, 214, 214);
+    padding: 20px 0;
+    margin-top: 0 !important; 
 }
 
-.card-imagem{
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    position: relative;
-    top: 100px;
-    left: 13px;
-    border: 3px solid rgb(0, 0, 0);
-}
-
-.imagens{
+.card {
     display: flex;
-    width: 1869px;
-    height: 400px;
-    justify-content: space-between;
-    position: relative;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none;
 }
 
-.btn-arrow{
-    position: relative;
+.card-imagem {
+    width: 200px;
+    height: 200px;
+    object-fit: cover; 
+    border-radius: 50%;
+    border: 3px solid white;
+    margin: 30px 10px;
+}
+
+.card-texto {
+    background-color: transparent !important;
+    border: none;
+}
+
+.card h5 {
+    margin-bottom: 5px;
+}
+
+.linha {
+    width: 180px;
+    height: 5px;
+    background-color: rgb(0, 0, 0);
+    opacity: 100%;
+    border: none;
+    border-radius: 7px;
+    margin: 0 auto 10px auto;
+}
+
+.imagens {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-arrow {
+    position: absolute;
+    top: 13px;
+    right: 2%;
     color: white;
     width: 24px;
     height: 24px;
-    top: 13px;
-    left: 96vw;
 }
 
-.arrow{
+.arrow {
     background-color: #00000000;
     border: none;
     color: #fff;
@@ -64,156 +98,67 @@ main{
     transition: transform 0.5s ease;
 }
 
-.arrow:hover{
+.arrow:hover {
     transform: rotate(360deg);
 }
 
-.textos{
-    display: flex;
-}
-
-/* DJONATHAN */
-.descricao-djonathan{
-    width: 200px;
-    height: 200px;
-    position: relative;
-    left: 59px;
-}
-
-.linha{
-    width: 198px;
-    height: 5px;
-    background-color: rgb(0, 0, 0);
-    opacity: 100%;
-    border: none;
-    border-radius: 7px;
-    position: relative;
-    bottom: 14px;
-}
-
-/* ISABELLA */
-.descricao-isa{
-    width: 200px;
-    height: 200px;
-    position: relative;
-    left: 283px;
-}
-
-.linha-isa{
-    width: 140px;
-    height: 5px;
-    background-color: rgb(0, 0, 0);
-    opacity: 100%;
-    border: none;
-    border-radius: 7px;
-    position: relative;
-    bottom: 14px;
-}
-
-/* JOHANN */
-.descricao-johann{
-    width: 213px;
-    height: 200px;
-    position: relative;
-    left: 445px;
-}
-
-.linha-johann{
-    width: 213px;
-    height: 5px;
-    background-color: rgb(0, 0, 0);
-    opacity: 100%;
-    border: none;
-    border-radius: 7px;
-    position: relative;
-    bottom: 14px;
-}
-
-/* GABI FERRARINI */
-.descricao-gabiF{
-    width: 213px;
-    height: 200px;
-    position: relative;
-    left: 628px;
-}
-
-.linha-gabiF{
-    width: 213px;
-    height: 5px;
-    background-color: rgb(0, 0, 0);
-    opacity: 100%;
-    border: none;
-    border-radius: 7px;
-    position: relative;
-    bottom: 14px;
-}
-
-/* GABI REPPOLD */
-.descricao-gabiR{
-    width: 200px;
-    height: 200px;
-    position: relative;
-    left: 834px;
-}
-
-.linha-gabiR{
-    width: 170px;
-    height: 5px;
-    background-color: rgb(0, 0, 0);
-    opacity: 100%;
-    border: none;
-    border-radius: 7px;
-    position: relative;
-    bottom: 14px;
-}
-
-/* ESTILIZAÇÃO DO FOOTER*/
-footer{
+footer {
     background: linear-gradient(
         270deg,
         rgb(152, 207, 207),
         rgb(120, 101, 189),
         rgb(174, 115, 189),
         rgb(172, 88, 127)
-      );
+    );
     width: 100%;
-    height: 200px;
+    padding: 20px;
 }
 
-.sobre{
+.sobre {
     color: rgba(255, 255, 255, 0.822);
-    width: 300px;
-    font-size: small;
-    display: grid;
-    gap: 8px;
-    position: relative;
-    bottom: 20px;
-    left: 83vw;
-}
-
-.footer-terms{
-    position: relative;
-    top: 85px;
-    left: 46vw;
-    width: 140px;
-    display: grid;
-    gap: 5px;
-
-}
-
-.infos{
-    width: 140px;
-    display: grid;
     font-size: small;
     text-align: center;
-    color: rgba(255, 255, 255, 0.822);
-
+    margin: 20px 0;
 }
 
-.data{
-    width: 140px;
-    display: grid;
-    font-size: 10px;
+.footer-terms {
     text-align: center;
+    margin: 20px 0;
+}
+
+.infos, .data {
+    font-size: small;
     color: rgba(255, 255, 255, 0.822);
+}
+
+@media screen and (max-width: 576px) {
+    .card-imagem {
+        width: 80%;
+        height: auto;
+    }
+
+    .btn-arrow {
+        right: 10%;
+    }
+
+    .footer-terms {
+        left: auto;
+        right: auto;
+        margin: 0 auto;
+    }
+
+    .sobre {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .imagens {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-arrow {
+        right: 5%;
+    }
 }
